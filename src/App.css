@@ -1,0 +1,80 @@
+/* Global styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    padding: 20px 30px;
+    margin: 0; /* Corrected margin property */
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased; /* Corrected font smoothing property */
+    -moz-osx-font-smoothing: grayscale; /* Corrected font smoothing property */
+    font-style: normal;
+    background: black;
+    color: white;
+}
+@media (min-width: 1024px) {
+    body {
+        padding: 40px 140px;
+    }
+}
+@media (min-width: 640px) {
+    body {
+        padding: 20px 60px;
+    }
+}
+
+:root {
+    --heading-color: #282938;
+    --bg-shade: #f9f4f4;
+    --blue-shade: #CCE8FF;
+    --green-shade: #CCFFDA;
+    --pink-shade: #FFBDB9;
+    --darkblue: #1c1e53;
+    --black: #181B2E;
+    --white: #ffffff;
+    --bg-gradient: linear-gradient(90deg, #ffffff 0.41%, #D9D9D9 50.29%, #FFF400 96.57%, #9D5382 100.08%);
+}
+
+.bg-custom-gradient {
+    background: var(--bg-gradient);
+    -webkit-background-clip: text; /* Apply background as text fill */
+    -webkit-text-fill-color: transparent; /* Hide text color */
+}
+
+/* H1 Heading */
+h1 {
+    font-family: "SF Pro Display";
+    font-size: 10vw;
+    font-style: normal;
+    font-weight: 1000;
+    line-height: 1;
+    background-clip: text; /* Apply background as text fill */
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent; /* Hide text color */
+}
+
+/* H2 Heading */
+h2 {
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+/* H3 heading */
+h3 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+/* heading style ends */
+
+/* Body text styles */
+p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+

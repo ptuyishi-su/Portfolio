@@ -1,0 +1,61 @@
+{
+    "skills": [
+        {
+            "id": 1,
+            "src": ["./img/Frame 43.png","./img/pikipiki-logo.svg"],
+            "experience":"UX/UI DESIGN // FUTURE VISION // FIGMA",
+            "title": "Traveling App ",
+            "description": "A traveling app that brings together luxuary and elagance of traveling",
+            "backgroundColor": "#90EE90",
+            "link": "/Pikipiki",
+            "gradient-color": "FF5A5F" 
+
+            
+        },
+        {
+            "id": 2,
+            "src": ["./img/subaru.png","./img/subaru-logo.webp" ],
+            "experience":"WEB DEVELOPMENT // NEXT.JS // GRAPHSQL",
+            "title": "Subaru Redesign",
+            "description": "Explore Subaru's exceptional cars, crossovers & SUVs including Outback, Ascent and Crosstrek. View photos, specs, compare models, and build ",
+            "backgroundColor": "#90EE90",
+            "link": "https://ist363-spring2023-nextjs.vercel.app/vehicles",
+            "target": "_blank",
+            "gradient-color": "004890" 
+
+
+        },
+        {
+            "id": 3,
+            "src": ["./img/potentiality.png","./img/potentiality-logo.svg"],
+            "experience":"UX/UI DESIGN // NON-PROFITS// WEB DEVELOPMENT",
+            "title": "Soccer Recruit",
+            "description": "Helping players get recruited and find scholarships on POTENTIALITY. Athletes, coaches and teams connect to build relationships and find opportunities to reach the next level.",
+            "backgroundColor": "#90EE90",
+            "link": "https://potentiality.vercel.app/", 
+            "target": "_blank", 
+            "gradient-color": "1E2027" 
+
+
+        }
+    ],
+    "modes": [
+        {
+            "id": 1,
+            "src": "./img/design-icon.png",
+            "title": "Designer",
+            "description": "I value simple content structure, clean design patterns, and thoughtful interactions.",
+            "tasks": ["UX", "UI", "Web", "Apps"],
+            "tools": ["Figma", "Sketch", "Webflow"]
+
+        },
+        {
+            "id": 1,
+            "src": "./img/code-icon.png",
+            "title": "Developer",
+            "description": "I like to code things from scratch, and enjoy bringing ideas to life in the browser.",
+            "tasks": ["UX", "UI", "Web", "Apps"],
+            "tools": ["React.js","Javascript", "Sass","npm", "Git", "GitHub"]
+        }
+    ]
+}
