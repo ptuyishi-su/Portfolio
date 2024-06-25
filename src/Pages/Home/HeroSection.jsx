@@ -18,7 +18,7 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <div class="pb-4">
-                    <img src={heroImage} alt="Portrait image of Patrick Tuyishime" className="rounded-r-full h-fit lg:h-[27vw] "/>
+                    <img src={heroImage} alt="Portrait image of Patrick Tuyishime" className="rounded-r-full lg:h-[27vw] "/>
                 </div>
                 <div className="flex gap-4">
                     <div className="pulse-svg-container">
