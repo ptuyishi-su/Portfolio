@@ -9,6 +9,7 @@ export default function MyPortfolio({ projects }) {
     useEffect(() => {
         getAuthors().then((response) => response && setAuthors(response));
     }, [getAuthors]);
+    
 
     return (
         <section class=" overflow-visible" id="myPortfolio">
