@@ -21,7 +21,7 @@ const useContentful = () => {
                     slug: fields.slug,
                     description: fields.description,
                     role: fields.role,
-                    thumbnail: fields.thumbnail ? `https:${fields.thumbnail.fields.file.url}` : null
+                    thumbnail: fields.thumbnail ? `https:${fields.thumbnail.fields.file.url}` : null 
                 };
             });
 
