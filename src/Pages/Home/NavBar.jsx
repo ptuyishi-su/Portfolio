@@ -16,7 +16,7 @@ export default function NavBar() {
     };
 
     return (
-        <nav className="flex justify-between gap-5 items-center">
+        <nav className="flex justify-between gap-5 items-center pb-5">
             <div className="flex justify-between py-2 lg:px-5 rounded-lg items-center lg:flex-grow lg:border-2">
                 <div>
                     <Link to="/Home">

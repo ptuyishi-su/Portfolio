@@ -3,30 +3,64 @@ import data from "../../data/index.json"
 
 
 export default function AboutMe () {
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+    
+        formData.append("access_key", "7b9d0751-71a9-4dd4-a963-dbb80181e471");
+    
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+    
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: json
+        }).then((res) => res.json());
+    
+        if (res.success) {
+          alert("Message Sent, Thank You", res);
+        }
+      };
+
     return (
-        <section className="my--background--section">
-            <div className="my--background--box">
-                <div className="my--backgound--content">
-                    <div className="my--background--img-text">
-                       
-                        <div className="description--img--divider">
-                            <div className="my--background--description">
-                            <div className= "my--background--headline">
-                            <h2>Hi, there.</h2>
-                        </div>
-                                <p className='text-medium'>
-                                I am Patrick, a third-year student studying Information Technology with a concentration in Web Development and Project Management at Syracuse University. I explore disciplines related to user design and enjoy projects with dynamic learning opportunities, where I can collaborate with experienced professionals and actively contribute to hands-on project development. I am especially eager to join a cross-functional team and create ethical and inclusive designs. I believe in staying updated with the latest technology and always strive to push the boundaries of my skills. </p>
-                                
-                                
+        <section className=" ">
+            <div className=" pb-5">
+                <h1>Contact</h1>
+            </div>
+            <div className="block lg:flex gap-16 justify-between">
+                <div className="">
+                    <p>Contact Form</p>
+                    <form onSubmit={onSubmit}>
+                        <div className="block lg:flex gap-5 pb-5 pt-2">
+                            <div className=" pb-5 lg:pb-0 sm:w-[100%]">
+                                <input type="text" name="name" placeholder="Name" className="inputField"/>
                             </div>
-                            <div className="background--img">
-                                <img src="./img/back--img.png" alt="Patrick's profile image smiling with sunset background" height={463} />
+                            <div>
+                                <input type="text" name="email" placeholder="Email" className="inputField"/>
                             </div>
                         </div>
-                    </div>
-                    
+                        <div className="pb-5">
+                            <input type="text" name="message" placeholder="Message" className="LargeInputField"/>
+                        </div>
+                        <div>
+                            <button className="button" type="submit">
+                                <p>Send</p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div className="w-[100%] pt-5 lg:pt-0">
+                <iframe className=" h-full w-full rounded-lg"
+                    src="https://my.spline.design/llabteksabtabletopbasketball-3ef1c6d39f8db87d429f40e2b1fefc78/"
+                ></iframe>
                 </div>
             </div>
+            
         </section>
     )
 }

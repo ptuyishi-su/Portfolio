@@ -11,40 +11,40 @@ import Github from "../../data/images/Github.svg"
 
 export default function Footer() {
     return (
-        <section className="flex justify-between" id="footerSection">
-            <div class="lg:flex gap-24 hidden"> 
-                <li class="flex gap-2">
+        <section className="flex justify-between border-t-2 pt-5 mt-10" id="footerSection">
+            <div className="lg:flex gap-24 hidden"> 
+                <li className="flex gap-2">
                     <Link to="/work"><p>Work</p></Link>
-                    <img src={Arrow} alt="arrow pointing to link" class="h-fit" />
+                    <img src={Arrow} alt="arrow pointing to link" className="h-fit" />
                 </li>
-                <li class="flex gap-2">
+                <li className="flex gap-2">
                     <Link to="/about"><p>Contact</p></Link>
-                    <img src={Arrow} alt="arrow pointing to link" class="h-fit" />
+                    <img src={Arrow} alt="arrow pointing to link" className="h-fit" />
                 </li>
-                <li class="flex gap-2">
+                <li className="flex gap-2">
                     <Link to="/work"><p>Resume</p></Link>
-                    <img src={Arrow} alt="arrow pointing to link" class="h-fit" />
+                    <img src={Arrow} alt="arrow pointing to link" className="h-fit" />
                 </li>
             </div>
-            <div class="flex gap-20"> 
-                <li class="flex gap-2">
+            <div className="flex gap-20"> 
+                <li className="flex gap-2">
                     <Link to="/work">
-                        <img src={Email} alt="arrow pointing to link" class="h-fit" />
+                        <img src={Email} alt="arrow pointing to link" className="h-fit" />
                     </Link>
                 </li>
-                <li class="flex gap-2">
+                <li className="flex gap-2">
                     <Link to="/work">
-                        <img src={Behance} alt="arrow pointing to link" class="h-fit" />
+                        <img src={Behance} alt="arrow pointing to link" className="h-fit" />
                     </Link>
                 </li>
-                <li class="flex gap-2">
+                <li className="flex gap-2">
                     <Link to="/work">
-                        <img src={Linkedin} alt="arrow pointing to link" class="h-fit" />
+                        <img src={Linkedin} alt="arrow pointing to link" className="h-fit" />
                     </Link>
                 </li>
-                <li class="flex gap-2">
+                <li className="flex gap-2">
                     <Link to="/work">
-                        <img src={Github} alt="arrow pointing to link" class="h-fit" />
+                        <img src={Github} alt="arrow pointing to link" className="h-fit" />
                     </Link>
                 </li>
             </div>

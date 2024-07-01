@@ -3,7 +3,7 @@ import React from 'react'
 const [slug] = () => {
   return (
     <div>
-      <p>Slug Page</p>
+      <h1>Slug Page</h1>
     </div>
   )
 }
