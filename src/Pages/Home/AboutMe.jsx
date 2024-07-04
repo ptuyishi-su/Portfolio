@@ -30,7 +30,7 @@ export default function AboutMe () {
     return (
         <section className=" ">
             <div className=" pb-5">
-                <h1>Contact</h1>
+                <h2>Contact</h2>
             </div>
             <div className="block lg:flex gap-16 justify-between">
                 <div className="">

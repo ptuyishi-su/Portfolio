@@ -1,6 +1,6 @@
 import useContentful from "../../data/useContentful";
 import { useEffect, useState } from "react";
-import ProjectCard from "./ProjectCard";
+import { Link } from "react-router-dom";
 
 export default function MyPortfolio({ projects }) {
     const [authors, setAuthors] = useState([]);
@@ -13,11 +13,11 @@ export default function MyPortfolio({ projects }) {
 
     return (
         <section className=" overflow-visible" id="myPortfolio">
-            <h1 className=" text-white tracking-wider pb-5 pt-10">Recent Work&gt;</h1>
+            <h2 className=" text-white tracking-wider pb-5 pt-10">Recent Work&gt;</h2>
             <div className="flex-row-reverse  lg:flex gap-5 pb-10 ">
                 {authors.map((author, index) => (
-                    <div key={index} className=" bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl">
-                        <a href={author.slug} className=" hover:cursor-grab">
+                    <div key={index} className=" bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl mb-5">
+                        <Link to={`/work/${author.slug}`} className="hover:cursor-grab">
                         <div className=" object-contain pb-5">
                             {author.thumbnail && <img src={author.thumbnail} alt={author.title} className="rounded-t-3xl "/>}
                         </div>
@@ -40,7 +40,7 @@ export default function MyPortfolio({ projects }) {
                             <p>{author.description}</p>
                             {/* Add more fields as needed */}
                         </div>
-                        </a>
+                        </Link>
                       
                     </div>
                 ))}

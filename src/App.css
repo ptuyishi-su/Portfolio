@@ -47,18 +47,19 @@ h1 {
     font-family: "SF Pro Display";
     font-size: 10vw;
     font-style: normal;
-    font-weight: 1000;
+    font-weight: 500;
     line-height: 1;
     background-clip: text; /* Apply background as text fill */
     -webkit-background-clip: text; /* For Safari */
     color: white; /* Hide text color */
+    
 
 }
 
 /* H2 Heading */
 h2 {
-    font-size: 120px;
-    font-weight: 700;
+    font-size: 5vw;
+    font-weight: 500;
     line-height: 140%;
 }
 
