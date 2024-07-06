@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
     padding: 20px 30px;
     margin: 0; /* Corrected margin property */
@@ -98,7 +99,7 @@ p {
     padding: 15px 30px 223px;
 }
 
-.button {
+.buttonPrimary{
     border-radius: 15px;
     border: 1.8px solid rgba(255, 255, 255, 0.50);
     background: rgba(255, 255, 255, 0.10);
@@ -115,3 +116,15 @@ p {
         
     }
 }
+
+.buttonSecondary {
+    border: 1px solid gray;
+    padding: 8px;
+    border-radius: 100px;
+}
+.borderContainer {
+    border: 1px solid gray;
+    padding: 6px;
+    border-radius: 10px;
+}
+

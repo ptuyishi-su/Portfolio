@@ -48,7 +48,7 @@ export default function AboutMe () {
                             <input type="text" name="message" placeholder="Message" className="LargeInputField"/>
                         </div>
                         <div>
-                            <button className="button" type="submit">
+                            <button className="buttonPrimary" type="submit">
                                 <p>Send</p>
                             </button>
                         </div>
