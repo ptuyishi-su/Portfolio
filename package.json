@@ -12,6 +12,8 @@
     "dotenv": "^16.4.5",
     "env-cmd": "^10.1.0",
     "framer-motion": "^11.0.3",
+    "gsap": "^3.12.5",
+    "mouse-follower": "^1.1.2",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
     "react": "^18.2.0",
