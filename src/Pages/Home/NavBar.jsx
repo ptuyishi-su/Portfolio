@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { useState } from "react";
 import LogoImage from '../../data/images/Frame.svg';
 import Menu from '../../data/images/circle-Menu.svg';
@@ -24,7 +25,11 @@ export default function NavBar() {
                     </Link>
                 </div>
                 <div className="space-x-7 hidden lg:flex">
-                    <div><Link to="/work"><p>Work</p></Link></div>
+                    <div>
+                    <Link to="Home" >
+                        <p>Work</p>
+                    </Link>
+                    </div>
                     <div><Link to="/about"><p>Contact</p></Link></div>
                     <div>
                         <a href="https://drive.google.com/file/d/1hGsK7_IW2eaE4IW-kAo6RXmrInj8gsHx/view?usp=sharing" target="_blank" rel="noopener noreferrer">
