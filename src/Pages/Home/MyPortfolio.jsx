@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useContentful from "../../data/useContentful";
+import { useLocation } from 'react-router-dom';
 
 export const renderMedia = (media) => {
     if (!media) return null;
@@ -21,13 +22,14 @@ export const renderMedia = (media) => {
 export default function MyPortfolio({ projects }) {
     const [authors, setAuthors] = useState([]);
     const { getAuthors } = useContentful();
+    const location = useLocation()
 
     useEffect(() => {
         getAuthors().then((response) => response && setAuthors(response));
     }, [getAuthors]);
 
     return (
-        <section className="overflow-visible" id="myPortfolio">
+        <section className="overflow-visible" id="MyPortfolio">
             <h2 className="text-white tracking-wider pb-5 pt-10">Recent Work&gt;</h2>
             <div className="flex-row-reverse lg:flex gap-5 pb-10">
                 {authors.map((author, index) => (

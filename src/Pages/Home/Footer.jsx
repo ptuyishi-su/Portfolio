@@ -28,22 +28,24 @@ export default function Footer() {
             </div>
             <div className="flex gap-20"> 
                 <li className="flex gap-2">
-                    <Link to="/work">
-                        <img src={Email} alt="arrow pointing to link" className="h-fit" />
-                    </Link>
+
+                        <a href="mailto:ptuyishi@syr.edu">
+                            <img src={Email} alt="arrow pointing to link" className="h-fit" />
+                        </a>
+
                 </li>
                 <li className="flex gap-2">
-                    <Link to="/work">
+                    <Link to="https://www.behance.net/patricktuyishi2" target="blank">
                         <img src={Behance} alt="arrow pointing to link" className="h-fit" />
                     </Link>
                 </li>
                 <li className="flex gap-2">
-                    <Link to="/work">
+                    <Link to="https://www.linkedin.com/in/patricktuyishime/" target="blank">
                         <img src={Linkedin} alt="arrow pointing to link" className="h-fit" />
                     </Link>
                 </li>
                 <li className="flex gap-2">
-                    <Link to="/work">
+                    <Link to="https://github.com/ptuyishi-su" target="blank">
                         <img src={Github} alt="arrow pointing to link" className="h-fit" />
                     </Link>
                 </li>
