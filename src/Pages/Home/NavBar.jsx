@@ -26,7 +26,7 @@ export default function NavBar() {
                 </div>
                 <div className="space-x-7 hidden lg:flex">
                     <div>
-                    <Link to="Home" >
+                    <Link to="work" >
                         <p>Work</p>
                     </Link>
                     </div>
