@@ -31,9 +31,9 @@ export default function MyPortfolio({ projects }) {
     return (
         <section className="overflow-visible" id="MyPortfolio">
             <h2 className="text-white tracking-wider pb-5 pt-10">Recent Work&gt;</h2>
-            <div className="flex-row-reverse lg:flex gap-5 pb-10">
-                {authors.map((author, index) => (
-                    <div key={index} className="bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl mb-5">
+            <div className="flex lg:flex gap-5 pb-10">
+                {authors.slice(0,3).map((author, index ) => (
+                    <div key={index } className="bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl mb-5">
                         <Link to={`/work/${author.slug}`} className="hover:cursor-grab">
                             <div className="object-contain pb-5">
                                 {renderMedia(author.thumbnail)}

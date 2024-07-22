@@ -43,7 +43,7 @@ const ProjectPage = () => {
               ))}
             </div>
           </div>
-          <div className='process flex gap-14 items-center py-5'>
+          <div className='process flex gap-14 items-baseline py-5'>
             <span>Process</span>
             <div className=' flex gap-20 max-w-[392px]'>
               {project.process}
