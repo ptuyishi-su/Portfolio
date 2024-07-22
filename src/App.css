@@ -6,20 +6,21 @@
 
 body {
     padding: 20px 30px;
-    margin: 0; /* Corrected margin property */
+    margin: 0; 
     font-family: "inter", sans-serif;
-    -webkit-font-smoothing: antialiased; /* Corrected font smoothing property */
-    -moz-osx-font-smoothing: grayscale; /* Corrected font smoothing property */
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
     font-style: normal;
     background: black;
     color: white;
-    max-width: 1440px;
 }
 @media (min-width: 1024px) {
     body {
-        padding: 40px 140px;
+        max-width: 1440px;
+        margin: 0 auto; 
     }
 }
+
 @media (min-width: 640px) {
     body {
         padding: 20px 60px;
