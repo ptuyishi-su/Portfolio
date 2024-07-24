@@ -22,7 +22,7 @@ export default function Footer() {
                     <img src={Arrow} alt="arrow pointing to link" className="h-fit" />
                 </li>
                 <li className="flex gap-2">
-                    <Link to="/work"><p>Resume</p></Link>
+                    <Link to="https://drive.google.com/file/d/13w5sxr0ZHHSkrmSAbdexVajGsF05_Owf/view?usp=sharing"><p>Resume</p></Link>
                     <img src={Arrow} alt="arrow pointing to link" className="h-fit" />
                 </li>
             </div>
