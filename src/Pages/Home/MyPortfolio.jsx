@@ -7,7 +7,7 @@ export const renderMedia = (media) => {
     if (!media) return null;
     const { url, mimeType } = media;
     if (mimeType.startsWith('image/')) {
-        return <img src={url} alt="" className="rounded-t-3xl" />;
+        return <img src={url} alt="" className="rounded-t-3xl" loading='lazy'/>;
     } else if (mimeType.startsWith('video/')) {
         return (
             <video controls className="rounded-t-3xl">
@@ -31,7 +31,7 @@ export default function MyPortfolio({ projects }) {
     return (
         <section className="overflow-visible" id="MyPortfolio">
             <h2 className="text-white tracking-wider pb-5 pt-10">Recent Work&gt;</h2>
-            <div className="flex lg:flex gap-5 pb-10">
+            <div className=" block sm:gap-10 lg:flex lg:gap-5 pb-10">
                 {authors.slice(0,3).map((author, index ) => (
                     <div key={index } className="bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl mb-5">
                         <Link to={`/work/${author.slug}`} className="hover:cursor-grab">
