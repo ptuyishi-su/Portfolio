@@ -32,7 +32,7 @@ export default function MyPortfolio({ projects }) {
         <section className="overflow-visible" id="MyPortfolio">
             <h2 className="text-white tracking-wider pb-5 pt-10">Recent Work&gt;</h2>
             <div className=" block sm:gap-10 lg:flex lg:gap-5 pb-10">
-                {authors.slice(0,3).map((author, index ) => (
+                {authors.slice(1,4).map((author, index ) => (
                     <div key={index } className="bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl mb-5">
                         <Link to={`/work/${author.slug}`} className="hover:cursor-grab">
                             <div className="object-contain pb-5">
@@ -46,7 +46,7 @@ export default function MyPortfolio({ projects }) {
                                     <div>
                                         <div className="gap-5 flex items-center">
                                             {author.role.map((role, i) => (
-                                                <p key={i} className="border-[1px] py-2 px-2 rounded-full bg-black">
+                                                <p key={i} className="border-[1px] text-xs py-2 px-2 rounded-full bg-black">
                                                     {role}
                                                 </p>
                                             ))}
