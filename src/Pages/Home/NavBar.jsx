@@ -32,7 +32,7 @@ export default function NavBar() {
                     </div>
                     <div><Link to="/about"><p>Contact</p></Link></div>
                     <div>
-                        <a href="https://drive.google.com/file/d/13w5sxr0ZHHSkrmSAbdexVajGsF05_Owf/view" target="_blank" rel="noopener noreferrer">
+                        <a href="https://drive.google.com/file/d/1MxnkMychiTgD5AjzsQi0406iJNSlPRY0/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                             <p>Resume</p>
                         </a>
                     </div>

@@ -1,4 +1,5 @@
 import { createClient } from "contentful";
+import { useCallback } from "react";
 
 const useContentful = () => {
     const client = createClient({
@@ -6,7 +7,7 @@ const useContentful = () => {
         accessToken: "_MOMDybXzCSEkl-dPpFw6bDEZ7HY0z3cZOADyR9ZqMc"
     });
 
-    const getAuthors = async () => {
+    const getAuthors = useCallback(async () => {
         try {
             const entries = await client.getEntries({
                 content_type: "patrickProjects",
@@ -39,7 +40,7 @@ const useContentful = () => {
         } catch (error) {
             console.log("Error fetching data:", error);
         }
-    };
+    }, []); // Empty dependency array ensures getAuthors is memoized and doesn't change on every render
 
     return { getAuthors };
 };
