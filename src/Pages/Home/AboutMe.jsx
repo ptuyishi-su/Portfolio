@@ -37,15 +37,18 @@ export default function AboutMe () {
                     <p>Contact Form</p>
                     <form onSubmit={onSubmit}>
                         <div className="block lg:flex gap-5 pb-5 pt-2">
-                            <div className=" pb-5 lg:pb-0 sm:w-[100%]">
-                                <input type="text" name="name" placeholder="Name" className="inputField"/>
+                            
+                            <div className="  pb-5 lg:pb-0 sm:w-[100%]">
+                                <input type="text" name="name" placeholder="Name" required className="inputField"/>
                             </div>
                             <div>
-                                <input type="text" name="email" placeholder="Email" className="inputField"/>
+                                <input type="text" name="email" placeholder="Email" required className="inputField ]"/>
                             </div>
                         </div>
                         <div className="pb-5">
-                            <input type="text" name="message" placeholder="Message" className="LargeInputField"/>
+                        <textarea rows="11" cols="33" placeholder="Message" required >
+                             
+                        </textarea>
                         </div>
                         <div>
                             <button className="buttonPrimary" type="submit">

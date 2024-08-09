@@ -7,8 +7,6 @@ import Linkedin from "../../data/images/LinkedIn.svg"
 import Github from "../../data/images/Github.svg"
 
 
-
-
 export default function Footer() {
     return (
         <section className="flex justify-between border-t-2 pt-5 mt-10" id="footerSection">
