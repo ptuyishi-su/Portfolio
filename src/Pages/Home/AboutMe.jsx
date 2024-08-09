@@ -59,8 +59,9 @@ export default function AboutMe () {
                 </div>
                 <div className="w-[100%] pt-5 lg:pt-0">
                 <iframe className=" h-full w-full rounded-lg"
-                    src="https://my.spline.design/llabteksabtabletopbasketball-3ef1c6d39f8db87d429f40e2b1fefc78/"
-                ></iframe>
+                    src="https://my.spline.design/llabteksabtabletopbasketballcopycopy-58097f58acc18c788a346b37065840c3/">
+                </iframe>
+                
                 </div>
             </div>
             
