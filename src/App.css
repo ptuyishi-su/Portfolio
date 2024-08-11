@@ -7,12 +7,19 @@
 body {
     padding: 20px 30px;
     margin: 0; 
-    font-family: "inter", sans-serif;
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; 
-    font-style: normal;
     background: black;
     color: white;
+}
+@font-face {
+    font-family: "CabinetGrotesk-Variable";
+    src: url("./data/font/CabinetGrotesk-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+p,a,span,li,div {
+    font-family: "CabinetGrotesk-Variable", sans-serif;
+    font-size: medium;
 }
 @media (min-width: 1024px) {
     body {
@@ -47,7 +54,6 @@ body {
 
 /* H1 Heading */
 h1 {
-    font-family: "SF Pro Display";
     font-size: 10vw;
     font-style: normal;
     font-weight: 500;
@@ -55,8 +61,6 @@ h1 {
     background-clip: text; /* Apply background as text fill */
     -webkit-background-clip: text; /* For Safari */
     color: white; /* Hide text color */
-    
-
 }
 
 /* H2 Heading */
@@ -66,18 +70,16 @@ h2 {
     line-height: 140%;
 }
 
-/* H3 heading */
+/* H3 Heading */
 h3 {
     font-size: 48px;
     font-weight: 700;
     line-height: 140%;
 }
 
-/* heading style ends */
-
 /* Body text styles */
 p {
-    font-size: 16px;
+    font-size: medium;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -89,10 +91,9 @@ p {
     background: rgba(255, 255, 255, 0.10);
     padding: 15px 30px;
     align-items: center;
-    
 } 
 
-textarea{
+textarea {
     border-radius: 15px;
     border: 1.8px solid rgba(255, 255, 255, 0.50);
     background: rgba(255, 255, 255, 0.10);
@@ -102,9 +103,7 @@ textarea{
     align-items: flex-start;
 }
 
-
-
-.buttonPrimary{
+.buttonPrimary {
     border-radius: 15px;
     border: 1.8px solid rgba(255, 255, 255, 0.50);
     background: rgba(255, 255, 255, 0.10);
@@ -114,11 +113,10 @@ textarea{
     color: black;
     width: 100%;
     
-    &:hover{
+    &:hover {
         background-color: white;
-        transition-duration: 1.5s ;
+        transition-duration: 1.5s;
         transition: ease-in;
-        
     }
 }
 
@@ -127,9 +125,9 @@ textarea{
     padding: 8px;
     border-radius: 100px;
 }
+
 .borderContainer {
     border: 1px solid gray;
     padding: 6px;
     border-radius: 10px;
 }
-
