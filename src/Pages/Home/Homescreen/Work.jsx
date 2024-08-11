@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useContentful from "../../../data/useContentful";
+import { motion } from "framer-motion";
+
 
 export default function Work(projects) {
     const [authors, setAuthors] = useState([]);
@@ -10,14 +12,51 @@ export default function Work(projects) {
     useEffect(() => {
         getAuthors().then((response) => response && setAuthors(response));
     }, [getAuthors]);
+    const frameVariants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                duration: 2,
+                staggerChildren: 0.5,
+                ease: [0.02, 0.6, 0.01, 0.91]
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: {
+            opacity: 0,
+            y: 200
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 2,
+                ease: [0.02, 0.6, 0.01, 0.91]
+            }
+        }
+    };
     return (
-        <section id="workSection" className="work">
-            <div className="pt-5 pb-3">
+        <motion.section 
+            id="workSection" 
+            className="work"
+            variants={frameVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            <motion.div 
+                className="pt-5 pb-3"
+                variants={itemVariants}
+            >
                 <h2>Recent Projects</h2>
-            </div>
-            <div className="flex flex-wrap gap-7">
+            </motion.div>
+            <motion.div className="flex flex-wrap gap-7" variants={itemVariants}>
                 {authors.map((author, index) => (
-                    <div key={index} className="w-full sm:w-[calc(50%-1rem)] hover:rounded-2xl hover:-translate-y-5 transition duration-500 ease-in-out">
+                    <motion.div  key={index} className="w-full sm:w-[calc(50%-1rem)] hover:rounded-2xl hover:-translate-y-5 transition duration-500 ease-in-out">
                         <Link to={`/work/${author.slug}`}>
                             <div className="relative h-0 pb-[56.25%] overflow-hidden">
                                 <LazyLoadImage
@@ -39,9 +78,9 @@ export default function Work(projects) {
                                 </div>
                             </div>
                         </Link>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     )
 }
