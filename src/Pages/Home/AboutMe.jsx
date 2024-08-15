@@ -51,7 +51,7 @@ export default function AboutMe () {
                         </textarea>
                         </div>
                         <div>
-                            <button className="buttonPrimary" type="submit">
+                            <button className="buttonPrimary hover:" type="submit">
                                 <p>Send</p>
                             </button>
                         </div>

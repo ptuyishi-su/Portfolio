@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import LogoImage from '../../data/images/Frame.svg';
 import Menu from '../../data/images/circle-Menu.svg';
@@ -17,22 +17,11 @@ export default function NavBar() {
     };
 
     return (
-        
         <nav>
             <motion.div className="flex justify-between gap-5 items-center pb-5"
-                initial={{
-                    opacity: 0,
-                    y: -70
-                }}
-                animate={{
-                    duration: 2,
-                    opacity: 1,
-                    y: 0
-                }}
-                transition={{
-                    duration: 1,
-                    ease: [0.6, 0.05, 0.01, 0.9]
-                }}>
+                initial={{ opacity: 0, y: -70 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: [0.6, 0.05, 0.01, 0.9] }}>
                 <div className="flex justify-between py-2 lg:px-5 rounded-lg items-center lg:flex-grow lg:border-2">
                     <div>
                         <Link to="/Home">
@@ -41,9 +30,7 @@ export default function NavBar() {
                     </div>
                     <div className="space-x-7 hidden lg:flex">
                         <div>
-                        <Link to="work" >
-                            <p>Work</p>
-                        </Link>
+                            <Link to="/work"><p>Work</p></Link>
                         </div>
                         <div><Link to="/about"><p>Contact</p></Link></div>
                         <div>
@@ -61,18 +48,29 @@ export default function NavBar() {
                 <div className="flex lg:hidden">
                     <img onClick={showSidebar} src={Menu} alt="Menu" className={`menu ${isSidebarVisible ? 'hidden' : 'flex'}`} />
                 </div>
-                <div className={`bg-slate-500 text-black sideMenu flex-col overflow-hidden rounded-md fixed top-0 right-0 h-screen w-[550px] z-[999] mt-0 bg-white/70 backdrop-blur-sm shadow-[-10px_0_10px_rgba(0,0,0,0.1)] flex items-center justify-center gap-[40px] font-bold ${isSidebarVisible ? 'flex' : 'hidden'}`}>
-                    <img onClick={hideSidebar} src={MenuClose} alt="Close Menu" className={`closeMenu h-10 absolute top-[50px] right-[110px] ${isSidebarVisible ? 'flex' : 'hidden'}`} />
-                    <div><Link to="/work"><p>Work</p></Link></div>
-                    <div><Link to="/about"><p>Contact</p></Link></div>
-                    <div>
-                    <a href="https://drive.google.com/file/d/13w5sxr0ZHHSkrmSAbdexVajGsF05_Owf/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                        <p>Resume</p>
-                    </a>
-                    </div>
-                </div>
+                
+                <AnimatePresence>
+                    {isSidebarVisible && (
+                        <motion.div 
+                            className="bg-slate-500 text-black sideMenu flex-col overflow-hidden rounded-md fixed top-0 right-0 h-screen w-[550px] z-[999] mt-0 bg-white/70 backdrop-blur-md shadow-[-10px_0_10px_rgba(0,0,0,0.1)] flex items-center justify-center gap-[40px] font-bold"
+                            initial={{ opacity: 0, x: 200 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: 200 }}
+                            transition={{ duration: 0.5 }}>
+                            <img onClick={hideSidebar} src={MenuClose} alt="Close Menu" className="closeMenu h-10 absolute top-[30px] right-[30px]" />
+                            <div className="justify-start">
+                                <Link to="/work" onClick={hideSidebar}><p className="text-6xl font-black">Work</p></Link>
+                            </div>
+                            <div><Link to="/about" onClick={hideSidebar}><p className="text-6xl font-black">Contact</p></Link></div>
+                            <div>
+                                <a href="https://drive.google.com/file/d/13w5sxr0ZHHSkrmSAbdexVajGsF05_Owf/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                    <p className="text-6xl font-black">Resume</p>
+                                </a>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </motion.div>
-            
         </nav>
     );
 }
