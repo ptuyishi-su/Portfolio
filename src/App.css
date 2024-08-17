@@ -131,3 +131,15 @@ textarea {
     padding: 6px;
     border-radius: 10px;
 }
+@keyframes shine {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .animate-shine-infinite {
+    animation: shine 2s infinite;
+  }
