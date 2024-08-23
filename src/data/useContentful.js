@@ -1,15 +1,29 @@
 import { createClient } from "contentful";
 import { useCallback } from "react";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const useContentful = () => {
     const client = createClient({
         space: "cx0biow617xg",
         accessToken: "_MOMDybXzCSEkl-dPpFw6bDEZ7HY0z3cZOADyR9ZqMc"
     });
-
+    const renderOptions = {
+        renderNode: {
+          'embedded-asset-block': (node) => {
+            const { file, title } = node.data.target.fields;
+            return (
+              <img 
+                src={`https:${file.url}`} 
+                alt={title} 
+                style={{ maxWidth: '50vw' }} 
+              />
+            );
+          }
+        }
+      };
     const getAuthors = useCallback(async () => {
         try {
-            const entries = await client.getEntries({
+            let entries = await client.getEntries({
                 content_type: "patrickProjects",
                 select: "fields"
             });
@@ -32,9 +46,11 @@ const useContentful = () => {
                     tool: fields.tool,
                     links: fields.links,
                     process: fields.process,
-                    headline: fields.headline
+                    headline: fields.headline,
+                    methord: documentToReactComponents(fields.methord, renderOptions)
                 };
             });
+            console.log(sanitizedEntries)
 
             return sanitizedEntries;
         } catch (error) {
