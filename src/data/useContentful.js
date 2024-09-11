@@ -7,20 +7,40 @@ const useContentful = () => {
         space: "cx0biow617xg",
         accessToken: "_MOMDybXzCSEkl-dPpFw6bDEZ7HY0z3cZOADyR9ZqMc"
     });
-    const renderOptions = {
+
+      const renderOptions = {
         renderNode: {
           'embedded-asset-block': (node) => {
             const { file, title } = node.data.target.fields;
-            return (
-              <img 
-                src={`https:${file.url}`} 
-                alt={title} 
-                style={{ maxWidth: '50vw' }} 
-              />
-            );
+            const mimeType = file.contentType;
+      
+            if (mimeType.startsWith('image/')) {
+              return (
+                <img 
+                  src={`https:${file.url}`} 
+                  alt={title} 
+                  style={{ maxWidth: '100vw' }} 
+                />
+              );
+            }
+      
+            if (mimeType.startsWith('video/')) {
+              return (
+                <video  
+                  autoPlay loop
+                  style={{ maxWidth: '100vw', padding: '0 15vw' }} 
+                >
+                  <source src={`https:${file.url}`} />
+                  Your browser does not support the video tag.
+                </video>
+              );
+            }
+            // Handle other file types (if needed)
+            return null;
           }
         }
       };
+      
     const getAuthors = useCallback(async () => {
         try {
             let entries = await client.getEntries({
@@ -50,7 +70,6 @@ const useContentful = () => {
                     methord: documentToReactComponents(fields.methord, renderOptions)
                 };
             });
-            console.log(sanitizedEntries)
 
             return sanitizedEntries;
         } catch (error) {

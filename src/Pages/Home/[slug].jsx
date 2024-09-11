@@ -15,6 +15,8 @@ const ProjectPage = () => {
     getAuthors().then((projects) => {
       const project = projects.find((project) => project.slug === slug);
       setProject(project);
+      console.log(getAuthors)
+
     });
   }, [slug, getAuthors]);
 
@@ -64,6 +66,7 @@ const ProjectPage = () => {
       </div>
       <div className='Banner w-full pt-10'>
           {renderMedia(project.banner)}
+
       </div>
       <div className='methordRich '>
         {project.methord}
@@ -71,7 +74,7 @@ const ProjectPage = () => {
       <style jsx>
         {`.methordRich {
             display: grid;
-            gap: 40px;
+            gap: 4rem;
             grid-auto-rows: min-content;
             grid-template-columns: 1fr; /* Single column layout on small devices */
             grid-template-rows: auto;
