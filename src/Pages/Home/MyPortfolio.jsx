@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useContentful from "../../data/useContentful";
 import { useLocation } from 'react-router-dom';
 
-export const renderMedia = (media) => {
+export let renderMedia = (media) => {
     if (!media) return null;
     const { url, mimeType } = media;
     if (mimeType.startsWith('image/')) {
