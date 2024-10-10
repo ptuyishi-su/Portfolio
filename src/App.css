@@ -56,6 +56,7 @@ p,a,span,li,div {
 /* H1 Heading */
 h1 {
     font-size: 10vw;
+    white-space: nowrap;
     font-style: normal;
     font-weight: 500;
     line-height: 1;

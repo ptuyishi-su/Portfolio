@@ -34,7 +34,6 @@ export default function AboutMe () {
             </div>
             <div className="block lg:flex gap-16 justify-between">
                 <div className="">
-                    <p>Contact Form</p>
                     <form onSubmit={onSubmit}>
                         <div className="block lg:flex gap-5 pb-5 pt-2">
                             
