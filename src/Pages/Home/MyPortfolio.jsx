@@ -41,10 +41,10 @@ export default function MyPortfolio({ projects }) {
                             <div className="px-8">
                                 <div className="flex items-center justify-between pb-5">
                                     <div>
-                                        <p className="bold">{author.title}</p>
+                                        <p className="bold text-xl">{author.title}</p>
                                     </div>
                                     <div>
-                                        <div className="gap-5 flex items-center">
+                                        <div className="gap-5 flex items-center ">
                                             {author.role.map((role, i) => (
                                                 <p key={i} className="border-[1px] text-xs py-2 px-2 rounded-full bg-black">
                                                     {role}
@@ -53,7 +53,7 @@ export default function MyPortfolio({ projects }) {
                                         </div>
                                     </div>
                                 </div>
-                                <p>{author.description}</p>
+                                <p className='text-lg'>{author.description}</p>
                                 {/* Add more fields as needed */}
                             </div>
                         </Link>

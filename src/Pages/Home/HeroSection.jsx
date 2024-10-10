@@ -48,24 +48,24 @@ export default function HeroSection() {
         >
             <motion.div className="hero" variants={frameVariants}>
                 <motion.div className="font-extrabold relative" variants={itemVariants}>
-                    <h1 className="text-white tracking-wide uppercase">Web Developer</h1>
+                    <h1 className="text-white tracking-wide uppercase">Web Designer</h1>
                 </motion.div>
                 <motion.div
-                    className="flex justify-between gap-10 lg:pr-[400px] pb-4 pt-4"
+                    className="flex justify-between gap-14 lg:pr-[300px] pb-4 pt-4"
                     variants={itemVariants}
                 >
-                    <motion.div className="max-w-[400px]" variants={itemVariants}>
-                        <p>
+                    <motion.div className="max-w-[500px]" variants={itemVariants}>
+                        <p className="text-lg">
                             Hey there, my name is Patrick, a Front-End Developer and Web Designer 👋 I’m passionate
                             about building solutions for social good with a focus on thoughtful user experience.
                             Currently studying Information Technology at Syracuse University.
                         </p>
                     </motion.div>
                     <motion.div
-                        className="hidden max-w-[400px] md:flex"
+                        className="hidden max-w-[500px] md:flex"
                         variants={itemVariants}
                     >
-                        <p>
+                        <p className="text-lg">
                             My journey in web development has allowed me to wear multiple hats - from coding the
                             front-end magic to designing the UI solutions. I'm looking forward to creating
                             experiences that simplify, uplift, and nurture human connection.

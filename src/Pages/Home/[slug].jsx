@@ -24,6 +24,7 @@ const ProjectPage = () => {
   
   return (
     <div className=' pt-10'>
+      
       <div className="header block lg:flex justify-between">
         <div className='mainHeader pb-10 lg:pb-0 block max-w-[589px]'>
           <p className=' text-[36px] font-medium'>{project.title}</p>
@@ -84,7 +85,7 @@ const ProjectPage = () => {
             padding: 40px 0px 0px;
             position: relative;
           }
-
+          
           @media (min-width: 640px) {
             /* Small devices and up (e.g., tablets) */
             .methordRich {
@@ -105,6 +106,9 @@ const ProjectPage = () => {
           }
           .methordRich img{
             width: 100%
+          }
+          p {
+            font-size: 18px
           }
         `}
     </style>
