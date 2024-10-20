@@ -10,7 +10,7 @@ export let renderMedia = (media) => {
         return <img src={url} alt="" className="rounded-t-3xl" loading='lazy'/>;
     } else if (mimeType.startsWith('video/')) {
         return (
-            <video controls className="rounded-t-3xl">
+            <video controls autoPlay className="rounded-t-3xl">
                 <source src={url} type={mimeType} />
                 Your browser does not support the video tag.
             </video>

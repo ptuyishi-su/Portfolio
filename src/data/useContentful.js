@@ -27,8 +27,9 @@ const useContentful = () => {
             if (mimeType.startsWith('video/')) {
               return (
                 <video  
-                  autoPlay loop
-                  style={{ maxWidth: '100vw', padding: '0 15vw' }} 
+                  autoPlay
+                  loop
+                  muted
                 >
                   <source src={`https:${file.url}`} />
                   Your browser does not support the video tag.

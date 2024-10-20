@@ -77,7 +77,7 @@ const ProjectPage = () => {
             display: grid;
             gap: 4rem;
             grid-auto-rows: min-content;
-            grid-template-columns: 1fr; /* Single column layout on small devices */
+            grid-template-columns: 12fr; /* Single column layout on small devices */
             grid-template-rows: auto;
             height: min-content;
             justify-content: center;
@@ -91,6 +91,7 @@ const ProjectPage = () => {
             .methordRich {
               grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Two columns */
             }
+           
           }
 
           @media (min-width: 1024px) {
@@ -109,6 +110,18 @@ const ProjectPage = () => {
           }
           p {
             font-size: 18px
+          }
+
+          .methordRich video{
+            max-width: 100vw;
+      padding: 0 15vw;
+          }
+      
+          @media (max-width: 640px) {
+            .methordRich video {
+              max-width: 100%;  /* Set max width to 100% for small screens */
+              padding: 0;        /* Remove padding for small screens */
+            }
           }
         `}
     </style>
