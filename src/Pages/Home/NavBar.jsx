@@ -21,7 +21,7 @@ export default function NavBar() {
             <motion.div className="flex justify-between gap-5 items-center pb-5"
                 initial={{ opacity: 0, y: -70 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: [0.6, 0.05, 0.01, 0.9] }}>
+                transition={{ duration: 2, ease: [0.6, 0.05, 0.01, 0.9] }}>
                 <div className="flex justify-between py-2 lg:px-5 rounded-lg items-center lg:flex-grow lg:border-2">
                     <div>
                         <Link to="/Home">

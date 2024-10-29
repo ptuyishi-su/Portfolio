@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useContentful from "../../data/useContentful";
 import { useLocation } from 'react-router-dom';
+import Cursor from './cursor';
 
 export let renderMedia = (media) => {
     if (!media) return null;
@@ -22,19 +23,22 @@ export let renderMedia = (media) => {
 export default function MyPortfolio({ projects }) {
     const [authors, setAuthors] = useState([]);
     const { getAuthors } = useContentful();
-    const location = useLocation()
+    const location = useLocation();
 
     useEffect(() => {
         getAuthors().then((response) => response && setAuthors(response));
     }, [getAuthors]);
 
     return (
-        <section className="overflow-visible" id="MyPortfolio">
+        <section className="overflow-visible relative cursor-default" id="MyPortfolio">
+            {/* Render the custom cursor component */}
+            <Cursor />
+            
             <h2 className="text-white tracking-wider pb-5 pt-10">Recent Work&gt;</h2>
-            <div className=" block sm:gap-10 lg:flex lg:gap-5 pb-10">
-                {authors.map((author, index ) => (
-                    <div key={index } className="bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl mb-5">
-                        <Link to={`/work/${author.slug}`} className="hover:cursor-grab">
+            <div className="block sm:gap-10 lg:flex lg:gap-5 pb-10 ">
+                {authors.map((author, index) => (
+                    <div key={index} className="bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl mb-5">
+                        <Link to={`/work/${author.slug}`} className="">
                             <div className="object-contain pb-5">
                                 {renderMedia(author.thumbnail)}
                             </div>
@@ -44,7 +48,7 @@ export default function MyPortfolio({ projects }) {
                                         <p className="bold text-xl">{author.title}</p>
                                     </div>
                                     <div>
-                                        <div className="gap-5 flex items-center ">
+                                        <div className="gap-5 flex items-center">
                                             {author.role.map((role, i) => (
                                                 <p key={i} className="border-[1px] text-xs py-2 px-2 rounded-full bg-black">
                                                     {role}
@@ -54,7 +58,6 @@ export default function MyPortfolio({ projects }) {
                                     </div>
                                 </div>
                                 <p className='text-lg'>{author.description}</p>
-                                {/* Add more fields as needed */}
                             </div>
                         </Link>
                     </div>
