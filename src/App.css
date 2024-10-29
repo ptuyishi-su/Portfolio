@@ -145,3 +145,8 @@ textarea {
   .animate-shine-infinite {
     animation: shine 2s infinite;
   }
+
+  .personalStatement:hover {
+    cursor: url('../src/Pages/Home/cursor.jsx'), auto; /* Replace 'path/to/custom-cursor.png' with the path to your custom cursor image */
+}
+
