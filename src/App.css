@@ -11,15 +11,19 @@ body {
     color: white;
 }
 @font-face {
-    font-family: "CabinetGrotesk-Variable";
-    src: url("./data/font/CabinetGrotesk-Variable.ttf") format("truetype");
+    font-family: "SF-Pro";
+    src: url("./data/font/SF-Pro-Display-Regular.otf") format("opentype"); /* Confirm path and format */
     font-weight: 100 900;
-    font-display: swap;
     font-style: normal;
+    font-display: swap;
 }
-p,a,span,li,div {
-    font-family: "CabinetGrotesk-Variable", sans-serif;
-    font-size: medium;
+
+body {
+    font-family: "SF-Pro", sans-serif; /* Use the custom font */
+    padding: 20px 30px;
+    margin: 0;
+    background: black;
+    color: white;
 }
 @media (min-width: 1024px) {
     body {
@@ -78,13 +82,15 @@ h3 {
     font-weight: 700;
     line-height: 140%;
 }
-
+h5 {
+    font-size: larger;
+}
 /* Body text styles */
 p {
     font-size: medium;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    color: #d7d3d3;
 }
 
 .inputField {

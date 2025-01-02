@@ -25,8 +25,7 @@ module.exports = {
         'headings': '-0.03em'
       },
       fontFamily: {
-        'general': ['GeneralSans-Variable', 'sans-serif'],
-        'grotesk': ['CabinetGrotesk-Variable', 'sans-serif'],
+        'sf-pro': ['"SF-Pro"', 'sans-serif'], // Use this class in your utilities
       },
       colors: {
         'heading-color': '#282938',

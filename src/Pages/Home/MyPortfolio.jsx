@@ -33,10 +33,11 @@ export default function MyPortfolio({ projects }) {
         <section className="overflow-visible relative cursor-default" id="MyPortfolio">
             {/* Render the custom cursor component */}
             <Cursor />
-            
-            <h2 className="text-white tracking-wider pb-5 pt-10">Recent Work&gt;</h2>
+            <Link to={`/work`} className=' '>
+                <h2 className="text-white tracking-wider  pb-5 pt-10">Recent Work&gt;</h2>
+            </Link>
             <div className="block sm:gap-10 lg:flex lg:gap-5 pb-10 ">
-                {authors.map((author, index) => (
+                {authors.slice(0,3).map((author , index) => (
                     <div key={index} className="bg-neutral-900 rounded-t-3xl w-full pb-5 rounded-3xl mb-5">
                         <Link to={`/work/${author.slug}`} className="">
                             <div className="object-contain pb-5">
