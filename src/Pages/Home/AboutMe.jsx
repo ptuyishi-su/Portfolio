@@ -51,7 +51,7 @@ export default function AboutMe () {
                         </div>
                         <div>
                             <button className="buttonPrimary hover:" type="submit">
-                                <p>Send</p>
+                                <p className="text-black">Send</p>
                             </button>
                         </div>
                     </form>
