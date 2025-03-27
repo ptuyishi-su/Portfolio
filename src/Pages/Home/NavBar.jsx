@@ -7,8 +7,7 @@ import MenuClose from '../../data/images/circle-menu-Close.svg';
 
 export default function NavBar() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-
-    const showSidebar = () => setIsSidebarVisible(true);
+    const toggleSidebar = () => setIsSidebarVisible(!isSidebarVisible);
     const hideSidebar = () => setIsSidebarVisible(false);
 
     const menuItems = [
@@ -21,31 +20,23 @@ export default function NavBar() {
         }
     ];
 
-    const MenuLink = ({ item }) => (
-        <div className="overflow-hidden h-6">
+    const MenuLink = ({ item, isMobile = false, onClick }) => (
+        <div className={`overflow-hidden ${isMobile ? 'h-auto' : 'h-6'}`}>
             <motion.div
-                whileHover={{ y: -24 }}
+                whileHover={{ y: isMobile ? 0 : -24 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="flex flex-col"
             >
                 {item.type === "anchor" ? (
-                    <>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
-                            <p>{item.text}</p>
-                        </a>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
-                            <p className="text-yellow-300">{item.text}</p>
-                        </a>
-                    </>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" onClick={isMobile ? onClick : undefined}
+                       className={isMobile ? "text-yellow-300 text-4xl font-bold" : ""}>
+                        {isMobile ? item.text : (<><p>{item.text}</p><p className="text-yellow-300">{item.text}</p></>)}
+                    </a>
                 ) : (
-                    <>
-                        <Link to={item.path}>
-                            <p>{item.text}</p>
-                        </Link>
-                        <Link to={item.path}>
-                            <p className="text-yellow-300">{item.text}</p>
-                        </Link>
-                    </>
+                    <Link to={item.path} onClick={isMobile ? onClick : undefined}
+                          className={isMobile ? "text-yellow-300 text-4xl font-bold" : ""}>
+                        {isMobile ? item.text : (<><p>{item.text}</p><p className="text-yellow-300">{item.text}</p></>)}
+                    </Link>
                 )}
             </motion.div>
         </div>
@@ -60,17 +51,11 @@ export default function NavBar() {
                 transition={{ duration: 2, ease: [0.6, 0.05, 0.01, 0.9] }}
             >
                 <div className="flex justify-between py-2 lg:px-5 rounded-lg items-center lg:flex-grow lg:border-2">
-                    <div>
-                        <Link to="/Home">
-                            <img src={LogoImage} alt="Logo" className="object-contain h-full" />
-                        </Link>
-                    </div>
+                    <Link to="/Home">
+                        <img src={LogoImage} alt="Logo" className="object-contain h-full" />
+                    </Link>
                     <div className="space-x-7 hidden lg:flex">
-                        {menuItems.map((item, index) => (
-                            <div key={index}>
-                                <MenuLink item={item} />
-                            </div>
-                        ))}
+                        {menuItems.map((item, index) => <MenuLink key={index} item={item} />)}
                     </div>
                 </div>
                 <button className="bg-white border-2 py-5 px-5 rounded-lg items-center hidden lg:flex">
@@ -79,31 +64,21 @@ export default function NavBar() {
                     </a>
                 </button>
                 <div className="flex lg:hidden">
-                    <img onClick={showSidebar} src={Menu} alt="Menu" className={`menu ${isSidebarVisible ? 'hidden' : 'flex'}`} />
+                    <img onClick={toggleSidebar} src={Menu} alt="Menu" className={`menu ${isSidebarVisible ? 'hidden' : 'flex'}`} />
                 </div>
                 
                 <AnimatePresence>
                     {isSidebarVisible && (
                         <motion.div 
-                            className="bg-slate-500 text-black sideMenu flex-col overflow-hidden rounded-md fixed top-0 right-0 h-screen w-[550px] z-[999] mt-0 bg-white/70 backdrop-blur-md shadow-[-10px_0_10px_rgba(0,0,0,0.1)] flex items-center justify-center gap-[40px] font-bold"
+                            className="fixed top-0 left-0 w-full h-screen bg-black z-[999] flex flex-col items-center justify-center gap-8"
                             initial={{ opacity: 0, x: 200 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 200 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <img onClick={hideSidebar} src={MenuClose} alt="Close Menu" className="closeMenu h-10 absolute top-[30px] right-[30px]" />
+                            <img onClick={hideSidebar} src={MenuClose} alt="Close Menu" className="absolute top-8 right-8 h-10" />
                             {menuItems.map((item, index) => (
-                                <div key={index}>
-                                    {item.type === "anchor" ? (
-                                        <a href={item.url} target="_blank" rel="noopener noreferrer">
-                                            <p className="text-6xl font-black text-black">{item.text}</p>
-                                        </a>
-                                    ) : (
-                                        <Link to={item.path} onClick={hideSidebar}>
-                                            <p className="text-6xl font-black text-black">{item.text}</p>
-                                        </Link>
-                                    )}
-                                </div>
+                                <MenuLink key={index} item={item} isMobile={true} onClick={hideSidebar} />
                             ))}
                         </motion.div>
                     )}
