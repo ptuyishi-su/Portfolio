@@ -64,12 +64,7 @@ export default function MyPortfolio({ projects }) {
                     </div>
                 ))}
             </div>
-            <div className="">
-            <button className="bg-white border-2 py-5 px-5 rounded-lg items-center hidden lg:flex">
-                    <a href="https://www.linkedin.com/in/patricktuyishime/" target="_blank" rel="noopener noreferrer">
-                        <p className="text-black">LinkedIn</p>
-                    </a>
-                </button>
+            <div className="flex justify-center">
             </div>
         </section>
     );
