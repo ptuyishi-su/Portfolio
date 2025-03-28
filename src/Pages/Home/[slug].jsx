@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import {renderMedia} from './MyPortfolio';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+
 const ProjectPage = () => {
   const { slug } = useParams();
   const [project, setProject] = useState(null);
@@ -21,6 +22,8 @@ const ProjectPage = () => {
   }, [slug, getAuthors]);
 
   if (!project) return <div>Loading...</div>;
+
+  
   
   return (
     <div className=' pt-10'>
@@ -85,6 +88,7 @@ const ProjectPage = () => {
       padding: 40px 0px 0px;
       position: relative;
     }
+    
 
     .methordRich ol {
       font-size: small
@@ -108,27 +112,30 @@ const ProjectPage = () => {
     }
 
     .methordRich h3 {
-      text-transform: uppercase;
-      width: 30px;
+     
     }
 
     .methordRich img {
       width: 100%;
     }
 
+   
+
     .methordRich p {
       font-size: 18px;
     }
 
     .methordRich video {
-      max-width: 100vw;
-      padding: 0 15vw;
+      grid-column: 1 / -1;      
+      padding: 0 9vw;
     }
-
+  
     @media (max-width: 640px) {
       .methordRich video {
         max-width: 100%; /* Set max width to 100% for small screens */
         padding: 0;      /* Remove padding for small screens */
+      
+      
       }
     }`}
 </style>
