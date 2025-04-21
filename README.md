@@ -8,6 +8,6 @@ Hosting: Vercel
 
 CMS: Contentfull
 
-Style: Tailwind
+CSS: Tailwind, Custom
 
 Constant work in progress.
