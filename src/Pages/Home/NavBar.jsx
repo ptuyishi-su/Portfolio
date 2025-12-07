@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import LogoImage from '../../data/images/Frame.svg';
+import LogoImage from '../../data/images/Logo.svg';
 import Menu from '../../data/images/circle-Menu.svg';
 import MenuClose from '../../data/images/circle-menu-Close.svg';
 
@@ -50,27 +50,27 @@ export default function NavBar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2, ease: [0.6, 0.05, 0.01, 0.9] }}
             >
-                <div className="flex justify-between py-2 lg:px-5 rounded-lg items-center lg:flex-grow lg:border-2">
+                <div className="flex justify-between py-2 sm:px-5 rounded-lg items-center sm:flex-grow sm:border-2 border-black">
                     <Link to="/Home">
-                        <img src={LogoImage} alt="Logo" className="object-contain h-full" />
+                        <img src={LogoImage} alt="Pharmacy Logo" className="object-contain h-8 w-auto" />
                     </Link>
-                    <div className="space-x-7 hidden lg:flex">
+                    <div className="space-x-7 hidden sm:flex">
                         {menuItems.map((item, index) => <MenuLink key={index} item={item} />)}
                     </div>
                 </div>
-                <button className="bg-white border-2 py-5 px-5 rounded-lg items-center hidden lg:flex">
-                    <a href="https://www.linkedin.com/in/patricktuyishime/" target="_blank" rel="noopener noreferrer">
-                        <p className="text-black">LinkedIn</p>
+                <button className="bg-black border-2 border-black py-[12px] px-5 rounded-lg items-center hidden sm:flex">
+                    <a href="https://www.linkedin.com/in/patricktuyishime/" target="_blank" rel="noopener noreferrer" className="block">
+                        <p className="text-white m-0 pb-0">LinkedIn</p>
                     </a>
                 </button>
-                <div className="flex lg:hidden">
+                <div className="flex sm:hidden">
                     <img onClick={toggleSidebar} src={Menu} alt="Menu" className={`menu ${isSidebarVisible ? 'hidden' : 'flex'}`} />
                 </div>
                 
                 <AnimatePresence>
                     {isSidebarVisible && (
                         <motion.div 
-                            className="fixed top-0 left-0 w-full h-screen bg-black z-[999] flex flex-col items-center justify-center gap-8"
+                            className="fixed top-0 left-0 w-full h-screen bg-white z-[999] flex flex-col items-center justify-center gap-8"
                             initial={{ opacity: 0, x: 200 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 200 }}

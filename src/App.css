@@ -3,39 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-    padding: 20px 30px;
-    margin: 0; 
-    background: black;
-    color: white;
-}
 @font-face {
     font-family: "SF-Pro";
-    src: url("./data/font/SF-Pro-Display-Regular.otf") format("opentype"); /* Confirm path and format */
+    src: url("./data/font/SF-Pro-Display-Regular.otf") format("opentype");
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
 body {
-    font-family: "SF-Pro", sans-serif; /* Use the custom font */
-    padding: 20px 30px;
+    padding: 12px 12px 32px 12px; /* top right bottom left */
     margin: 0;
-    background: black;
-    color: white;
-}
-@media (min-width: 1024px) {
-    body {
-        max-width: 1440px;
-        margin: 0 auto; 
-        
-    }
+    background: #f4f4f4;
 }
 
+/* Desktop: ≥ 640px */
 @media (min-width: 640px) {
     body {
         padding: 20px 60px;
+        max-width: 1280px;
+        margin: 0 auto;
     }
 }
 
@@ -57,73 +44,40 @@ body {
     -webkit-text-fill-color: transparent; /* Hide text color */
 }
 
-/* H1 Heading */
-h1 {
-    font-size: 10vw;
-    white-space: nowrap;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1;
-    background-clip: text; /* Apply background as text fill */
-    -webkit-background-clip: text; /* For Safari */
-    color: white; /* Hide text color */
-}
-
-/* H2 Heading */
-h2 {
-    font-size: 5vw;
-    font-weight: 500;
-    line-height: 140%;
-}
-
-/* H3 Heading */
-h3 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 140%;
-}
-h5 {
-    font-size: larger;
-}
-/* Body text styles */
-p {
-    font-size: medium;
-    font-style: normal;
-    font-weight: 400;
-    color: #d7d3d3;
-}
+/* Typography styles are now in typography.css */
+/* Legacy styles removed - using new unified typography system */
 
 .inputField {
     border-radius: 15px;
-    border: 1.8px solid rgba(255, 255, 255, 0.50);
-    background: rgba(255, 255, 255, 0.10);
+    border: 1.8px solid rgba(0, 0, 0, 0.30);
+    background: rgba(0, 0, 0, 0.05);
     padding: 15px 30px;
     align-items: center;
-    
+    color: black;
 } 
 
 textarea {
     border-radius: 15px;
-    border: 1.8px solid rgba(255, 255, 255, 0.50);
-    background: rgba(255, 255, 255, 0.10);
+    border: 1.8px solid rgba(0, 0, 0, 0.30);
+    background: rgba(0, 0, 0, 0.05);
     width: 100%;
     padding: 0 30px;
     padding: 15px ;
     align-items: flex-start;
+    color: black;
 }
 
 .buttonPrimary {
     border-radius: 15px;
-    border: 1.8px solid rgba(255, 255, 255, 0.50);
-    background: rgba(255, 255, 255, 0.10);
+    border: 1.8px solid rgba(0, 0, 0, 0.30);
     padding: 15px 30px;
     align-items: center;
-    background: #ffffff;
-    color: black;
+    background: #000000;
+    color: white;
     width: 100%;
     
     &:hover {
-        background-color: white;
+        background-color: #333333;
         transition-duration: 1.5s;
         transition: ease-in;
     }

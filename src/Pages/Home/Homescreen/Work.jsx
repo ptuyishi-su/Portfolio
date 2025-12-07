@@ -67,11 +67,11 @@ export default function Work(projects) {
                             </div>
                             <div className="flex justify-between pt-3 pb-10">
                                 <div>
-                                    <p className=" font-semibold">{author.title}</p>
+                                    <p className="project-title">{author.title}</p>
                                 </div>
                                 <div className="flex gap-3 justify-between">
                                     {author.role.map((role, i) => (
-                                        <p key={i} className="border-[1px]  text-xs py-2 px-2 rounded-full bg-black">
+                                        <p key={i} className="border-[1px] text-caption py-2 px-2 rounded-full bg-gray-200 text-black border-black">
                                             {role}
                                         </p>
                                     ))}

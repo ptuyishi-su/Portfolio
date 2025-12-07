@@ -5,9 +5,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'sm': '640px',   // Mobile to Desktop breakpoint
+      'md': '768px',   // Optional: Tablet
+      'lg': '1024px',  // Optional: Large desktop
+      'xl': '1280px',  // Optional: Extra large
+    },
     extend: {
-      screens: {
-        'md2': '872px'
+      maxWidth: {
+        'container': '1280px', // Max content width
       },
       fontSize: {
         'title': ['clamp(3rem, 14vw, 9rem)'],

@@ -53,7 +53,7 @@ export default function Cursor() {
   return (
     <div
       ref={curs}
-      className="cursor pointer-events-none fixed left-1/2 top-1/2 z-[999] bg-[#fff201] h-[10px] w-[10px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full sm:flex"
+      className="cursor pointer-events-none fixed left-1/2 top-1/2 z-[999] bg-[#000000] h-[10px] w-[10px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full sm:flex"
       style={{ left: `${x}px`, top: `${y}px` }}
     >
       <svg
