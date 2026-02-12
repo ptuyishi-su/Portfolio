@@ -37,3 +37,4 @@
 4. Apply max-width at 640px breakpoint
 5. Update all components
 
+
